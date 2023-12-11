@@ -1,6 +1,9 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package com.CMEPPS.listatareas.model;
 
-import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,23 +19,37 @@ public class Todo {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    private String userName;
+    private String UserName;
+    private String Name;
     private String description;
-    private Date targetDate;
+    private int duration;
+    private int priority;
+    private int idlist;
 
-    public Todo() {
-        super();
+    public Todo(long id, String UserName, String Name, String description, int duration, int priority, int idlist) {
+        this.id = id;
+        this.UserName = UserName;
+        this.Name = Name;
+        this.description = description;
+        this.duration = duration;
+        this.priority = priority;
+        this.idlist = idlist;
     }
 
-    public Todo(String user, String desc, Date targetDate, boolean isDone) {
-        super();
-        this.userName = user;
-        this.description = desc;
-        this.targetDate = targetDate;
+    public Todo() {
+       super();
     }
 
     public long getId() {
         return id;
+    }
+
+    public String getName() {
+        return Name;
+    }
+
+    public void setName(String Name) {
+        this.Name = Name;
     }
 
     public void setId(long id) {
@@ -40,11 +57,11 @@ public class Todo {
     }
 
     public String getUserName() {
-        return userName;
+        return UserName;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setUserName(String UserName) {
+        this.UserName = UserName;
     }
 
     public String getDescription() {
@@ -55,11 +72,28 @@ public class Todo {
         this.description = description;
     }
 
-    public Date getTargetDate() {
-        return targetDate;
+    public int getDuration() {
+        return duration;
     }
 
-    public void setTargetDate(Date targetDate) {
-        this.targetDate = targetDate;
+    public void setDuration(int duration) {
+        this.duration = duration;
     }
+
+    public int getPriority() {
+        return priority;
+    }
+
+    public void setPriority(int priority) {
+        this.priority = priority;
+    }
+
+    public int getIdlist() {
+        return idlist;
+    }
+
+    public void setIdlist(int idlist) {
+        this.idlist = idlist;
+    }
+
 }

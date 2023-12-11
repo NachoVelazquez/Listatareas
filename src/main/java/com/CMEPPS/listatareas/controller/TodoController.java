@@ -26,13 +26,6 @@ public class TodoController {
     @Autowired
     private ITodoService todoService;
 
-    @InitBinder
-    public void initBinder(WebDataBinder binder) {
-        // Date - dd/MM/yyyy
-        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-        binder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, false));
-    }
-
     @RequestMapping(value = "/list-todos", method = RequestMethod.GET)
     public String showTodos(ModelMap model) {
         String name = getLoggedInUserName(model);

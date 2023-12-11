@@ -30,12 +30,11 @@ public class TodoService implements ITodoService {
     public void updateTodo(Todo todo) {
         todoRepository.save(todo);
     }
-
+    
     @Override
-    public void addTodo(String name, String desc, Date targetDate, boolean isDone) {
-        todoRepository.save(new Todo(name, desc, targetDate, isDone));
+    public void addTodo(long id,String UserName ,String Name, String description, int duration, int priority, int idlist) {
+        todoRepository.save(new Todo(id,UserName,Name,description,duration,priority,idlist));
     }
-
     @Override
     public void deleteTodo(long id) {
         Optional < Todo > todo = todoRepository.findById(id);
