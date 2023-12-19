@@ -16,5 +16,5 @@ public interface IHoursService {
 
 	void deleteHours(long id);
 
-	void saveHours(long id);
+	void saveHours(Hours hours);
 }

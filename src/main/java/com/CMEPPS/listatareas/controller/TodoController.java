@@ -77,21 +77,21 @@ public class TodoController {
 		return "redirect:/list-todos";
 	}
 
-	// @RequestMapping(value = "/update-todo", method = RequestMethod.POST)
+	@RequestMapping(value = "/reorder-priority", method = RequestMethod.POST)
 	public String reorderTodobyPriority(ModelMap model, @Validated Todo todo, BindingResult result) {
 		String name = getLoggedInUserName(model);
 		model.put("todos", todoService.getTodosByUserOrderbyPriority(name));
 		return "list-todos";
 	}
 
-	// @RequestMapping(value = "/update-todo", method = RequestMethod.POST)
+	 @RequestMapping(value = "/reorder-duration", method = RequestMethod.POST)
 	public String reorderTodobyDuration(ModelMap model, @Validated Todo todo, BindingResult result) {
 		String name = getLoggedInUserName(model);
 		model.put("todos", todoService.getTodosByUserOrderbyDuration(name));
 		return "list-todos";
 	}
 
-	// @RequestMapping(value = "/update-todo", method = RequestMethod.POST)
+	@RequestMapping(value = "/notifications", method = RequestMethod.POST)
 	public String notificationsTodo(ModelMap model, @Validated Todo todo, BindingResult result) {
 		String name = getLoggedInUserName(model);
 		model.put("todos", todoService.getTodosByUserNameAndDurationLessThan(name, 24));

@@ -12,7 +12,7 @@ public class HoursService implements IHoursService {
 
 	@Autowired
 	private HoursRepository hoursRepository;
-	
+
 	@Override
 	public List<Hours> getTodosByUser(String user) {
 		return hoursRepository.findByUserName(user);
@@ -25,26 +25,24 @@ public class HoursService implements IHoursService {
 
 	@Override
 	public void updateHours(Hours hours) {
-		// TODO Auto-generated method stub
-
+		hoursRepository.save(hours);
 	}
 
 	@Override
 	public void addHours(long id, String username, long hours) {
-		// TODO Auto-generated method stub
-
+		hoursRepository.save(new Hours(id, username, hours));
 	}
 
 	@Override
 	public void deleteHours(long id) {
-		// TODO Auto-generated method stub
-
+		Optional<Hours> hours = hoursRepository.findById(id);
+		if (hours.isPresent()) {
+			hoursRepository.delete(hours.get());
+		}
 	}
 
 	@Override
-	public void saveHours(long id) {
-		// TODO Auto-generated method stub
-
+	public void saveHours(Hours hours) {
+		hoursRepository.save(hours);
 	}
-
 }
