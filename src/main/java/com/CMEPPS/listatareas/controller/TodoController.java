@@ -94,7 +94,7 @@ public class TodoController {
 	// @RequestMapping(value = "/update-todo", method = RequestMethod.POST)
 	public String notificationsTodo(ModelMap model, @Validated Todo todo, BindingResult result) {
 		String name = getLoggedInUserName(model);
-		model.put("todos", todoService.getTodosByUserNameAndDurationLessThan(name));
+		model.put("todos", todoService.getTodosByUserNameAndDurationLessThan(name, 24));
 		return "list-todos";
 	}
 }

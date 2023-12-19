@@ -14,17 +14,18 @@
    <table class="table table-striped">
     <thead>
      <tr>
-      <th width="40%">Descripción</th>
-      <th width="40%">Fecha objetivo</th>
+      <th width="40%">Nombre</th>
+      <th width="20%">Duracion</th>
+      <th width="20%">Prioridad</th>
       <th width="20%"></th>
      </tr>
     </thead>
     <tbody>
      <c:forEach items="${todos}" var="todo">
       <tr>
-       <td>${todo.description}</td>
-       <td><fmt:formatDate value="${todo.targetDate}"
-         pattern="dd/MM/yyyy" /></td>
+       <td>${todo.Name}</td>
+       <td>${todo.duration}</td>
+       <td>${todo.priority}</td>
        <td><a type="button" class="btn btn-success"
         href="/update-todo?id=${todo.id}">Editar</a>
        <a type="button" class="btn btn-warning"

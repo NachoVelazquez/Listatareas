@@ -31,8 +31,8 @@ public class TodoService implements ITodoService {
 	}
 
 	@Override
-	public List<Todo> getTodosByUserNameAndDurationLessThan(String user) {
-		return todoRepository.findByUserNameAndDurationLessThan(user);
+	public List<Todo> getTodosByUserNameAndDurationLessThan(String user, int duration) {
+		return todoRepository.findByUserNameAndDurationLessThan(user, duration);
 	}
 
 	@Override

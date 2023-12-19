@@ -13,7 +13,7 @@ public interface ITodoService {
 
 	List<Todo> getTodosByUserOrderbyDuration(String user);
 	
-	List<Todo> getTodosByUserNameAndDurationLessThan(String user);
+	List<Todo> getTodosByUserNameAndDurationLessThan(String user, int duration);
 
 	Optional<Todo> getTodoById(long id);
 
